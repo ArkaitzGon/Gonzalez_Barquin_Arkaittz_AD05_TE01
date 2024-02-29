@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Create Team</title>
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+
+<form method="post" action="#"th:action="@{/paises/new/submit}" th:object="${pais}">
+ <h1>
+	 <span th:text="${id} ? 'Editar' : 'Nuevo'"></span> pais
+</h1>
+
+	<input type="hidden" th:field="*{id}" id="id"/>  
+  <div class="form-group">
+	<label for="nombreInput">Nombre</label>
+	<input class="form-control" type="text"	placeholder="Introduce el nombre" th:field="*{nombre}"></input>
+  </div>				
+   <div class="form-group">
+    <label for="iidiomaInput">Idioma</label>
+    <input class="form-control" type="text" placeholder="Introduce el idioma" th:field="*{idioma}">
+  </div>
+    <div class="form-group">
+    <label for="poblacionInput">Poblacion</label>
+    <input class="form-control" type="text" placeholder="Introduce el numero de poblacion" th:field="*{poblacion}">
+  </div>
+  <button type="submit" class="btn btn-primary">Send</button>
+</form>
+
+<div th:replace="fragments/footer :: footer"></div>
+<br/>  
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+</html>
