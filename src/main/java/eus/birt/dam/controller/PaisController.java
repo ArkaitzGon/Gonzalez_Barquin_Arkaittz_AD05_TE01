@@ -82,6 +82,12 @@ public class PaisController {
 		return "paisesForm";
 	}
 	
+	/**
+	 * Metodo que enseña una lista de las ciudades de los paises
+	 * @param id con el pais que se quiere ver
+	 * @param model para añdir atributos
+	 * @return con lista de ciudades del pais seleccionado
+	 */
 	@GetMapping("/ver/{id}")
 	public String verPais(@PathVariable("id") int id, Model model) {
 		model.addAttribute("ciudadPais", paisRepo.findById(id));
